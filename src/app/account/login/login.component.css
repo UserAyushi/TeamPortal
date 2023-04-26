@@ -1,0 +1,45 @@
+.button:hover{
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24),0 0px 50px 0 rgba(0,0,0,0.19);
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+/* input::after {
+    border-bottom: green;
+} */
+
+.register1{
+padding: 10px;
+border: none;
+font-size: 17px;
+color: #eee;
+background-color: black;
+}
+/* input.ng-invalid{
+    border-left: 5px solid red;
+}
+input.ng-valid{
+    border-left: 5px solid rgb(9, 255, 0);
+} */
+}
+#email
+{
+    font-size: 22px;
+}
+#password {
+    font-size: 22px;
+}
+#popup{
+    background-color: aqua;
+}

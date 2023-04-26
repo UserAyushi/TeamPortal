@@ -1,0 +1,23 @@
+ <!-- table for team view create by user -->
+ <form [formGroup]="Team">
+  <table class="table table-striped">
+    <div class="">
+    <h2>Team Details</h2>
+  </div>
+    <thead>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of TeamData">
+        <td class="font-weight-bold">User Name :</td>
+        <td>{{row.fName}} {{row.lName}}</td>
+      
+        </tr>
+        <tr *ngFor="let row of TeamDetails">
+          <td>Team Name :</td>
+        <td>{{ row.teamName}}</td>
+        <!-- <td>{{row.teamId}}</td> -->
+      </tr>
+      <br />
+    </tbody>
+  </table>
+</form>

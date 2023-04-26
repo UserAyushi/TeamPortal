@@ -1,0 +1,141 @@
+<section>
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="row align-items-center" style="height: 100vh">
+      <div class="col-md-6 h-100">
+        <div
+          class="d-flex"
+          style="
+            width: 632px;
+            height: 90%;
+            justify-content: center;
+            object-fit: cover;
+          "
+        >
+          <img
+            src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7863.jpg?w=740&t=st=1681204947~exp=1681205547~hmac=259bec2facd1a4e907e94fa10e6a0230b79de803e05005d23f960c8a8a93c529?w=900"
+            class="img-fluid"
+            style="border-radius: 10px"
+            alt="Sample image"
+          />
+        </div>
+      </div>
+
+      <div
+        class="col-md-6 h-100 d-flex align-items-center"
+        style="background-image: url(https://img.freepik.com/free-photo/design-space-paper-textured-background_53876-147826.jpg?w=740&t=st=1681205133~exp=1681205733~hmac=0b9caa6a2c0e956e7e2aefe12ea73d9ecf2fe9917a6e3bc7abc79a6ab3e07fe7); justify-content: center"
+      >
+        <form [formGroup]="registerForm"  (ngSubmit)="login()"  style="width: 60%;">
+          <div class="container mt-3">
+            <!-- Email input -->
+            <br />
+            <div class="form-group mb-4">
+              <label class="form-label" id="email" for="form3Example3"
+              >Email address</label
+              >
+              <div style="width: 100%; margin-bottom: 10px;">
+                    <i class="fas fa-envelope" style="padding: 10px;position: absolute;"></i>
+                <input
+                type="email"
+                formControlName="email"
+                placeholder="Email"
+                class="form-control h6"
+                required
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  text-align: center;"     
+              />
+            </div>
+              <span *ngIf="email && email.invalid && email.touched" style="color: red"
+                >Required*</span
+              >      
+             
+              </div>
+            
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form3Example4" id="password">Password</label>
+              <div style="width: 100%; margin-bottom: 10px;">
+                <span class="fas fa-lock"  style="padding: 10px;position: absolute;"></span>
+                <input
+              type="password"
+              minlength="4"
+              placeholder="Password"
+              maxlength="10"
+              formControlName="password"
+              class=" bi bi-envelope-fill form-control h6"
+              required
+              style="
+                  width: 100%;
+                  padding: 10px;
+                  text-align: center;   
+              "
+              
+            />
+              </div>
+          
+          <span *ngIf="password&& password.invalid && password.touched" style="color: red"
+            >Required*</span  
+          >
+         
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              
+              <button
+              class="button"
+                type="button"
+                style="
+                border:none;
+                padding: 8px;
+                background-color: black;
+                color: white;
+                border-radius: 8px;
+                cursor: pointer;"
+                [disabled]="registerForm.invalid"
+                (click)="login()"
+                
+                [routerLink]="['/domain/teamportal']"
+              >
+              Login
+              <span class="bx bx-log-in-circle" ></span>
+              </button>
+              
+          
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?</p>
+              <br />
+              <a [routerLink]="['/account/register']"
+                ><button
+                  type="button"
+                  class="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                  style="
+                border:none;
+                padding: 8px;
+                background-color: rgb(16, 198, 243);
+                color: rgb(5, 5, 5);
+                border-radius: 8px;
+                cursor: pointer;
+                "
+                >
+                  Registration
+                  <span class="bx bxs-user-plus" ></span>
+                </button>
+              </a>
+              <br />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</section> 
+
+
+
+
+       

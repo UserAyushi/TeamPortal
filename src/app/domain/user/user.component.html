@@ -1,0 +1,76 @@
+<form [formGroup]="Team" class="p-5" style="
+  border: none;
+  align-items: center;
+  padding: 10px;
+      height: 75vh;
+      width: 100vh;
+       background-color:rgb(218, 220, 220)  ">
+  <!-- <div class="container" style="margin-bottom: 20vh;"> -->
+    <div class="row">
+      <div class="col-6">
+        <label class="h6">Enter First Name</label>
+        <input type="text" formControlName="fName" class="form-control h6  text-capitalize" />
+        <!-- <span *ngIf="fname && fname.invalid && fname.touched" style="color: red">Required*</span> -->
+      </div>
+      <br />
+      <div class="col-6">
+        <label class="h6">Enter Last Name</label>
+        <input type="text" class="form-control h6 text-capitalize" formControlName="lName" minlength="4" maxlength="10"
+          required />
+        <!-- <span *ngIf="lName && lName.invalid && lName.touched" style="color: red">Required*</span> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4" >
+        <div class="select">
+          <div class="form-group">
+            <label for="eduId" class="h6">Education</label>
+            <select class="fa fa-sort-desc h3" formControlName="eduId" class="form-control drpbutton">
+              <option class="dropdown-content" *ngFor="let i3 of Education" [value]="i3.eduId">{{i3.educationName}}
+              </option>
+            </select>
+            <!-- <span *ngIf="eduId && eduId.invalid && eduId.touched" style="color: red">Required</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dropdown">
+          <div class="form-group">
+            <label for="desId" class="h6">Designation</label>
+            <select class="form-control drpbutton " formControlName="desId">
+              <option class="dropdown-content" *ngFor=" let i of Des" [value]="i.desId">{{i.designationName}}</option>
+            </select>
+            <!-- <span *ngIf="desId && desId.invalid && desId.touched" style="color: red">Required</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="deptId" class="h6">Department</label>
+          <select formControlName="deptId" class="form-control drpbutton">
+            <option class="dropdown-content" *ngFor="let i1 of Department" [value]="i1.depId">{{i1.depName}}</option>
+
+          </select>
+          <!-- <span *ngIf="deptId && deptId.invalid && deptId.touched" style="color: red">Required</span> -->
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="email" class="h6"> Email</label>
+        <input ng-readonly="true" placeholder="example@domain.com" type="text" class="form-control h6" readonly="true"
+          formControlName="email" minlength="4" maxlength="20" required />
+        <!-- <span *ngIf="email && email.invalid && email.touched" style="color: red">Required* </span>
+        <span *ngIf="email && email.invalid && email.touched" style="color: red">Please fill like this pettern - -->
+        <!-- example@gmail.com </span> -->
+      </div>
+      <div class="col-md-12 text-center">
+        <button type="submit" style="margin-right: 30px;margin-top: 20vh;" class="btn btn-success">Update</button>
+        <button type="button" [routerLink]="['/domain/teamportal']" style="margin-top: 20vh;"
+          class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  <!-- </div> -->
+</form>

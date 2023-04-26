@@ -1,0 +1,163 @@
+<form class="container-fluid d-flex" style="
+  align-items: center;
+        
+      height:100%;
+      opacity: 0.9;
+      background-image: url(https://img.freepik.com/free-photo/design-space-paper-textured-background_53876-147826.jpg?w=740&t=st=1681205133~exp=1681205733~hmac=0b9caa6a2c0e956e7e2aefe12ea73d9ecf2fe9917a6e3bc7abc79a6ab3e07fe7); 
+  " [formGroup]="Team" (ngSubmit)="Submit()">
+  <div class="container" style="justify-content: center;margin-bottom: 20vh;margin-top: 30px;">
+    <div class="row" style="justify-content: center">
+      <div class="col-5">
+        <label class="h6">Enter First Name</label>
+        <input type="text" minlength="4" maxlength="10" formControlName="fName" class="form-control h6 text-capitalize"
+          required />
+        <span *ngIf="fName && fName.invalid && fName.touched" style="color: red">Required*</span>
+      </div>
+      <br />
+      <div class="col-5">
+        <label class="h6">Enter Last Name</label>
+        <input type="text" class="form-control h6 text-capitalize" formControlName="lName" minlength="4" maxlength="10"
+          required />
+        <span *ngIf="lName && lName.invalid && lName.touched" style="color: red">Required*</span>
+      </div>
+    </div>
+    <div class="row" style="justify-content: center">
+      <div class="col-3">
+        <div class="select">
+          <div class="form-group">
+            <label for="eduId" class="h6">Education</label>
+            <select class="fa fa-sort-desc h3" formControlName="eduId" class="form-control drpbutton">
+              <option class="dropdown-content" *ngFor="let i3 of Education" [value]="i3.eduId">{{i3.educationName}}</option>
+           
+          
+            </select>
+            <!-- <span *ngIf="eduId && eduId.invalid && eduId.touched" style="color: red">Required</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dropdown">
+          <div class="form-group">
+            <label for="desId" class="h6">Designation</label>
+            <select class="form-control drpbutton " formControlName="desId">
+              <option class="dropdown-content" *ngFor=" let i of Des" [value]="i.desId">{{i.designationName}}</option>
+             
+            </select>
+            <!-- <span *ngIf="desId && desId.invalid && desId.touched" style="color: red">Required</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="department" class="h6">Department</label>
+          <select formControlName="deptId" class="form-control drpbutton">
+            <option  class="dropdown-content" *ngFor="let i1 of Department" [value]="i1.depId">{{i1.depName}}</option>
+          
+          </select>
+          <!-- <span *ngIf="deptId && deptId.invalid && deptId.touched" style="color: red">Required</span> -->
+        </div>
+      </div>
+    </div>
+    <div class="row" style="justify-content: center">
+      <div class="col-5">
+        <label for="email" class="h6">Enter Email</label>
+        <input placeholder="example@domain.com" type="text" class="form-control h6" formControlName="email"
+          minlength="4" maxlength="50" required />
+        <span *ngIf="email && email.invalid && email.touched" style="color: red">Required* </span>
+        <span *ngIf="email && email.invalid && email.touched" style="color: red">Please fill like this pattern -
+          example@gmail.com </span>
+
+      </div>
+      <div class="col-5">
+        <label for="phone" class="h6">Enter Phone Number</label>
+        <input type="tel" class="form-control h6" formControlName="phone" minlength="10" maxlength="10" required />
+        <span *ngIf="phone && phone.invalid && phone.touched" style="color: red">Required* </span>
+      </div>
+      <div class="col-5">
+        <label class="h6">Enter Password</label>
+        <input type="password"  maxlength="10" formControlName="password" class="form-control h6"
+          required />
+          <span *ngIf="function['password'].getError('required')!=null" class="errormessage"></span>
+        <span *ngIf="password && password.invalid && password.touched" style="color: red">*enter strong password</span> 
+      </div>
+      <div class="col-5 form-group">
+        <label class="h6"> Confirm Password</label>
+        <input type="password" maxlength="10" formControlName="confirmPassword" class="form-control h6"
+          required />
+          <span *ngIf="function['confirmPassword'].getError('Mustmatch')!=null" class="errormessage">Password is Mismatched*</span>
+          <span *ngIf="function['confirmPassword'].getError('required')!=null" class="errormessage"></span>
+         <span *ngIf="confirmPassword && confirmPassword.invalid && confirmPassword.touched" style="color: red">Required*
+         </span> 
+       
+      </div>
+
+      <div class="row" style="justify-content: center">
+        <div class="col-3">
+          <div style="margin-right: 20px" class="col-5 h6">
+            <label for="gender" class="h6">Gender : </label>
+
+            <div class="form-check form-check-inline">
+              <input mdbRadio formControlName="gender" class="form-check-input" type="radio" name="gender"
+                id="inlineRadio1" value="option1" />
+              <label class="form-check-label" for="inlineRadio1"> Male</label>
+            </div> 
+            <div class="form-check form-check-inline">
+              <input mdbRadio formControlName="gender" class="form-check-input" type="radio" name="gender"
+                id="inlineRadio2" value="female" />
+              <label class="form-check-label" for="inlineRadio2"> Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input mdbRadio formControlName="gender" class="form-check-input" type="radio" name="gender"
+                id="inlineRadio3" value="other" />
+
+              <label class="form-check-label" for="inlineRadio3"> Other</label>
+            </div>
+            <span *ngIf="gender && gender.invalid && gender.touched" style="color: red">Required*</span>
+          </div>
+        </div>
+        <div class="col-3">
+          <label class="h6">DOB</label><br />
+          <input type="date" style="border-radius: 5px" formControlName="dob" required />
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-md-12 text-center">
+      <button type="submit" style="margin-right: 30px;" class="button btn btn-round">Submit</button>
+
+
+      <button type="button" style="margin-left: 380px ;" [routerLink]="['/account/login']" [routerLinkActive]="['active']" class="btn btn-danger">Close</button>
+
+    </div>
+  </div>
+</form>
+
+
+<table class="table -mat-3">
+  <div class="border"></div>
+  <tbody>
+    <tr *ngFor="let row of RegisterData">
+
+      <td>{{ row.fName }}</td>
+      <td>{{ row.lName }}</td>
+      <td>{{ row.desId }}</td>
+      <td>{{ row.deptId }}</td>
+      <td>{{ row.eduId }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{row.phone}}</td>
+      <td>{{ row.password }}</td>
+      <td>{{row.confirmPassword}}</td>
+      <td>{{ row.gender }}</td>
+      <td>{{ row.dob }}</td>
+      <td>
+        <button style="color: aliceblue" type="button" data-toggle="modal" data-target="#exampleModal"
+          class="btn btn-primary">
+          Edit
+        </button>
+
+        <button class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
